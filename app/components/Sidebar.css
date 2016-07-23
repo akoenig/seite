@@ -18,7 +18,7 @@ const styles = css(`
 
 	.sidebar__logo {
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-		padding: 1em 0;
+		padding: 1.8em 0;
 	}
 
 	.sidebar__captions {

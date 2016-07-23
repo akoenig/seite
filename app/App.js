@@ -21,6 +21,7 @@ const styles = require('./App.css');
 
 const App = () =>
 	h('div', {class: styles.app.className},
+		h('div', {class: styles.app__dragbar.className}),
 		h('div', {class: styles.app__sidebar.className},
 			h(Sidebar, {captions: ['12. Juli 2016']})
 		),

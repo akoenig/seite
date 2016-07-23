@@ -26,7 +26,8 @@ app.on('ready', () => {
 		center: true,
 		resizable: false,
 		width: 1024,
-		height: 768
+		height: 768,
+		titleBarStyle: 'hidden'
 	});
 
 	win.loadURL(`file://${__dirname}/index.html`);

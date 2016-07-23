@@ -37,6 +37,15 @@ module.exports = css(`
 		height: 100%;
 	}
 
+	.app__dragbar {
+		-webkit-app-region: drag;
+		left: 0;
+		height: 25px;
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+
 	.app__sidebar {
 		border-right: 1px solid rgba(0, 0, 0, 0.1);
 		height: 100%;
