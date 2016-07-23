@@ -22,7 +22,7 @@ const styles = require('./App.css');
 const App = () =>
 	h('div', {class: styles.app.className},
 		h('div', {class: styles.app__sidebar.className},
-			h(Sidebar)
+			h(Sidebar, {captions: ['12. Juli 2016']})
 		),
 		h('div', {class: styles.app__editor.className},
 			h(Editor)
