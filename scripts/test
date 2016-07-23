@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+#
+# Script for performing the unit tests
+#
+# Author:
+#
+#     André König <andre.koenig@gmail.com>
+#
+
+mocha './{*.js,app}/**/*.spec.js'

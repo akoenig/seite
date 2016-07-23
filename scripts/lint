@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+#
+# Script for linting the sources
+#
+# Author:
+#
+#     André König <andre.koenig@gmail.com>
+#
+xo
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+#
+# Script for starting the app in the electron shell
+#
+# Author:
+#
+#     André König <andre.koenig@gmail.com>
+#
+
+electron .

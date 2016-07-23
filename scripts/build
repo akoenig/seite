@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+#
+# Script for creating a production build
+#
+# Author:
+#
+#     André König <andre.koenig@gmail.com>
+#
+
+webpack --config ./webpack/production.js
+

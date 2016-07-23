@@ -1,0 +1,50 @@
+/**
+ * @seite/desktop
+ *
+ * Copyright, 2016 André König <andre.koenig@gmail.com>
+ * All rights reserved
+ *
+ */
+
+/*
+ * @author André König <andre.koenig@gmail.com>
+ *
+ */
+
+const css = require('./utils/css');
+
+module.exports = css(`
+	html, body {
+		background: #fff;
+		height: 100%;
+		-webkit-user-select: none;
+	}
+
+	body {
+		font-family: 'Open Sans', sans-serif;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	#app {
+		height: 100%;
+	}
+
+	.app {
+		display: flex;
+		flex-direction: row;
+		height: 100%;
+	}
+
+	.app__sidebar {
+		border-right: 1px solid rgba(0, 0, 0, 0.1);
+		height: 100%;
+		width: 18%;
+	}
+
+	.app__editor {
+		height: 100%;
+		width: 100%;
+	}
+`);
