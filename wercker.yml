@@ -10,7 +10,7 @@ build:
         name: npm run lint
         code: npm run lint
 
- after-steps:
+  after-steps:
     - install-packages:
       packages: ruby
     - wantedly/pretty-slack-notify:
