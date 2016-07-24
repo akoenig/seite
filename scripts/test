@@ -8,4 +8,4 @@
 #     André König <andre.koenig@gmail.com>
 #
 
-mocha './{*.js,app}/**/*.spec.js'
+mocha "./{*.js,app}/**/*.spec.js"
