@@ -25,20 +25,15 @@ chai.use(require('chai-as-promised'));
 const {expect} = chai;
 
 const daily = require('.');
-const {days} = require('.');
+const {fetch} = require('.');
 
-describe('The "daily" days function', function () {
+describe('The "daily" fetch function', function () {
 	const tmp = path.join(__dirname, '.data');
-
-	const files = ['20120102', '20130201'];
 
 	beforeEach(done => {
 		fs.mkdirSync(tmp);
 
-		// Touch test files
-		files.forEach(file =>
-			fs.closeSync(fs.openSync(path.join(tmp, `${file}.md`), 'w'))
-		);
+		fs.writeFileSync(path.join(tmp, '20120102.md'), 'foobar');
 
 		done();
 	});
@@ -47,14 +42,15 @@ describe('The "daily" days function', function () {
 		rimraf(tmp, done)
 	);
 
-	it('should be able to create an index with all available days', function () {
+	it('should be able to read a day document', function () {
 		const probe = co.wrap(function * () {
 			const handler = yield daily({path: tmp});
-			const result = yield days({handler});
+
+			const result = yield fetch({handler, day: '20120102'});
 
 			return result;
 		});
 
-		return expect(probe()).to.eventually.eql(['20130201', '20120102']);
+		return expect(probe()).to.eventually.equal('foobar');
 	});
 });
