@@ -7,9 +7,14 @@ build:
         code: npm install
 
     - script:
-        name: npm test
-        code: npm test
-
-    - script:
         name: npm run lint
         code: npm run lint
+
+ after-steps:
+    - install-packages:
+      packages: ruby
+    - wantedly/pretty-slack-notify:
+      webhook_url: $SLACK_WEBHOOK_URL
+      channel: ci
+      username: wercker-bot
+      notify_on: "failed"
