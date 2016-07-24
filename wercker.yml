@@ -2,17 +2,11 @@ box: node
 
 build:
   steps:
-    - script:
-        name: npm install
-        code: npm install
-
+    - npm-install
+    - npm-test
     - script:
         name: npm run lint
         code: npm run lint
-
-    - script:
-        name: npm run test
-        code: npm run test
 
   after-steps:
     - install-packages:
