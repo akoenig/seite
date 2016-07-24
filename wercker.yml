@@ -1,0 +1,15 @@
+box: node
+
+build:
+  steps:
+    - script:
+        name: npm install
+        code: npm install
+
+    - script:
+        name: npm test
+        code: npm test
+
+    - script:
+        name: npm run lint
+        code: npm run lint
