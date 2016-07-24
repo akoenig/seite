@@ -6,7 +6,7 @@
     "lint": "scripty",
     "start": "scripty",
     "build": "scripty",
-    "test": "mocha './app/**/*.spec.js'"
+    "test": "scripty"
   },
   "config": {
     "ghooks": {
