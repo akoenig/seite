@@ -18,14 +18,11 @@ const path = require('path');
 const co = require('co');
 const fs = require('co-fs');
 
-const days = co.wrap(function * ({handler}) {
+const fetch = co.wrap(function * ({handler, day}) {
 	const {path: dataPath, extension} = handler;
-	const files = yield fs.readdir(dataPath);
+	const contents = yield fs.readFile(path.join(dataPath, `${day}${extension}`), 'utf-8');
 
-	return files
-		.filter(file => file.indexOf(extension) !== -1)
-		.map(file => path.basename(file, extension))
-		.sort((a, b) => b - a);
+	return contents;
 });
 
-module.exports = days;
+module.exports = fetch;

@@ -18,14 +18,10 @@ const path = require('path');
 const co = require('co');
 const fs = require('co-fs');
 
-const days = co.wrap(function * ({handler}) {
+const put = co.wrap(function * ({handler, day, contents}) {
 	const {path: dataPath, extension} = handler;
-	const files = yield fs.readdir(dataPath);
 
-	return files
-		.filter(file => file.indexOf(extension) !== -1)
-		.map(file => path.basename(file, extension))
-		.sort((a, b) => b - a);
+	yield fs.writeFile(path.join(dataPath, `${day}${extension}`), contents);
 });
 
-module.exports = days;
+module.exports = put;

@@ -21,6 +21,8 @@ const envPaths = require('env-paths');
 const paths = envPaths('seite', {suffix: 'app'});
 
 const days = require('./days');
+const fetch = require('./fetch');
+const put = require('./put');
 
 const daily = ({path = paths.data, extension = '.md'} = {}) =>
 	co(function * () {
@@ -38,3 +40,5 @@ const daily = ({path = paths.data, extension = '.md'} = {}) =>
 
 module.exports = daily;
 module.exports.days = days;
+module.exports.fetch = fetch;
+module.exports.put = put;
