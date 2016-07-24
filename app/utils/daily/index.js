@@ -18,7 +18,10 @@ const fs = require('co-fs');
 
 const envPaths = require('env-paths');
 
-const paths = envPaths('seite', {suffix: 'app'});
+//
+// Use the temp directory when running in a test environment
+//
+const paths = process.env.NODE_ENV === 'testing' ? {data: '/tmp'} : envPaths('seite', {suffix: 'app'});
 
 const days = require('./days');
 const fetch = require('./fetch');

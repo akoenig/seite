@@ -8,4 +8,6 @@
 #     André König <andre.koenig@gmail.com>
 #
 
+export NODE_ENV=testing
+
 mocha "./{*.js,app}/**/*.spec.js"
