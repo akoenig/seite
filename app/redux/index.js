@@ -13,4 +13,15 @@
 
 'use strict';
 
-export {};
+const {reducers: DaysReducers, sagas: DaysSagas} = require('./days');
+
+const reducers = {
+	days: DaysReducers
+};
+
+const sagas = [
+	...DaysSagas
+];
+
+module.exports.reducers = reducers;
+module.exports.sagas = sagas;

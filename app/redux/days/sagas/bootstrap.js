@@ -13,11 +13,12 @@
 
 'use strict';
 
-import DeveloperTools from './DeveloperTools';
+const {put} = require('redux-saga/effects');
 
-const createEnhancers = () => [
-	// eslint-disable-next-line
-	DeveloperTools()
-];
+const {load} = require('../actions');
 
-export default createEnhancers;
+function * bootstrap() {
+	yield put(load());
+}
+
+module.exports = bootstrap;

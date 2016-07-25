@@ -13,7 +13,8 @@
 
 'use strict';
 
-const DeveloperTools = () =>
-	window.devToolsExtension ? window.devToolsExtension() : f => f;
+const reducers = require('./reducers');
+const sagas = require('./sagas');
 
-export default DeveloperTools;
+module.exports.reducers = reducers;
+module.exports.sagas = sagas;

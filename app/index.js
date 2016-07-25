@@ -14,9 +14,17 @@
 'use strict';
 
 const {h, render} = require('preact');
+const {Provider} = require('preact-redux');
 
 const App = require('./App');
 
-console.log(App);
+const {reducers, sagas} = require('./redux');
+const createStore = require('./store');
 
-render(h(App), document.getElementById('app'));
+const store = createStore({reducers, sagas});
+
+render(
+	h(Provider, {store},
+		h(App)
+	)
+, document.getElementById('app'));
