@@ -13,11 +13,10 @@
 
 'use strict';
 
-import Saga from './Saga';
+const bootstrap = require('./bootstrap');
+const load = require('./load');
 
-const createMiddlewares = ({sagas}) => [
-	// eslint-disable-next-line
-	Saga(sagas)
+module.exports = [
+	load,
+	bootstrap
 ];
-
-export default createMiddlewares;

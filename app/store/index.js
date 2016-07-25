@@ -13,25 +13,43 @@
 
 'use strict';
 
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
+const {createStore: _createStore, combineReducers, applyMiddleware, compose} = require('redux');
+const createSagaMiddleware = require('redux-saga').default;
 
-import createEnhancers from './enhancers';
-import createMiddlewares from './middlewares';
+const createStore = options => {
+	const initialState = {};
 
-const configureStore = options => {
-	const middlewares = createMiddlewares(options.middlewares);
-	const enhancers = createEnhancers(options.enhancers);
+	//
+	// Define middlewares
+	//
+	const middlewares = {
+		saga: createSagaMiddleware()
+	};
 
-	const {reducers, initialState} = options;
+	//
+	// Define enhancers
+	//
+	const enhancers = [
 
-	return createStore(
-		combineReducers(reducers),
+	];
+
+	const store = _createStore(
+		combineReducers(options.reducers),
 		initialState,
 		compose(
-			applyMiddleware(...middlewares),
+			applyMiddleware(
+				middlewares.saga
+			),
 			...enhancers
 		)
 	);
+
+	//
+	// Run sagas
+	//
+	options.sagas.forEach(saga => middlewares.saga.run(saga));
+
+	return store;
 };
 
-export default configureStore;
+module.exports = createStore;

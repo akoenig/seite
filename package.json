@@ -42,9 +42,11 @@
     "co": "^4.6.0",
     "co-fs": "^1.2.0",
     "csjs": "^1.0.5",
+    "dateformat": "^1.0.12",
     "env-paths": "^0.3.0",
     "insert-css": "^1.0.0",
     "preact": "^5.5.0",
+    "preact-redux": "^1.0.1",
     "redux": "^3.5.2",
     "redux-actions": "^0.10.1"
   }
