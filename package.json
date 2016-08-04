@@ -35,10 +35,10 @@
     "electron-prebuilt": "^1.2.8",
     "ghooks": "^1.3.2",
     "greenkeeper-postpublish": "^1.0.0",
-    "mocha": "^2.5.3",
+    "mocha": "^3.0.1",
     "rimraf": "^2.5.4",
     "scripty": "^1.6.0",
-    "xo": "^0.15.1"
+    "xo": "^0.16.0"
   },
   "dependencies": {
     "co": "^4.6.0",
