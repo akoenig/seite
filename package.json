@@ -22,7 +22,8 @@
     "rules": {
       "xo/filename-case": [
         0
-      ]
+      ],
+      "import/no-extraneous-dependencies": 0
     }
   },
   "keywords": [],
