@@ -23,6 +23,7 @@ module.exports = css(`
 	body {
 		font-family: 'Open Sans', sans-serif;
 		margin: 0;
+		overflow: hidden;
 		padding: 0;
 		width: 100%;
 	}
@@ -33,27 +34,17 @@ module.exports = css(`
 
 	.app {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		height: 100%;
 	}
 
-	.app__dragbar {
+	.app__header {
 		-webkit-app-region: drag;
-		left: 0;
-		height: 25px;
-		position: fixed;
-		top: 0;
 		width: 100%;
 	}
 
-	.app__sidebar {
-		border-right: 1px solid rgba(0, 0, 0, 0.1);
-		height: 100%;
-		width: 18%;
-	}
-
-	.app__editor {
-		height: 100%;
-		width: 100%;
+	.app__workspace {
+		flex: 1;
+		padding: 2em;
 	}
 `);

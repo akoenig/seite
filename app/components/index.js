@@ -13,8 +13,8 @@
 
 'use strict';
 
+const Header = require('./Header');
 const Editor = require('./Editor');
-const Sidebar = require('./Sidebar');
 
+module.exports.Header = Header;
 module.exports.Editor = Editor;
-module.exports.Sidebar = Sidebar;

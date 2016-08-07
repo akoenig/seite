@@ -1,0 +1,26 @@
+/**
+ * @seite/desktop
+ *
+ * Copyright, 2016 André König <andre.koenig@gmail.com>
+ * All rights reserved
+ *
+ */
+
+/*
+ * @author André König <andre.koenig@gmail.com>
+ *
+ */
+
+const css = require('../utils/css');
+
+const styles = css(`
+	.header {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.8em;
+	}
+`);
+
+module.exports = styles;

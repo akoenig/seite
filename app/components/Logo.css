@@ -21,6 +21,7 @@ const styles = css(`
 	}
 
 	.logo {
+		cursor: default;
 		font-weight: 100;
 		text-align: center;
 	}

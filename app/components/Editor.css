@@ -16,7 +16,6 @@ const css = require('../utils/css');
 const styles = css(`
 	.editor {
 		height: 100%;
-		margin: 2em;
 	}
 
 	.editor__textarea {
@@ -24,7 +23,7 @@ const styles = css(`
 		height: 100%;
 		font-size: 135%;
 		line-height: 1.7em;
-		margin: 0;
+		margin:0;
 		outline: 0;
 		resize: none;
 		width: 100%;
