@@ -30,7 +30,7 @@ const {days} = require('.');
 describe('The "daily" days function', function () {
 	const tmp = path.join(__dirname, '.data');
 
-	const files = ['20120102', '20130201'];
+	const files = ['1470566387', '1455235200'];
 
 	beforeEach(done => {
 		fs.mkdirSync(tmp);
@@ -55,6 +55,6 @@ describe('The "daily" days function', function () {
 			return result;
 		});
 
-		return expect(probe()).to.eventually.eql(['20130201', '20120102']);
+		return expect(probe()).to.eventually.eql(['1470566387', '1455235200']);
 	});
 });

@@ -13,12 +13,32 @@
 
 'use strict';
 
-const {put} = require('redux-saga/effects');
+const {put, take} = require('redux-saga/effects');
+const dateformat = require('dateformat');
 
-const {load} = require('../actions');
+const {
+	load,
+	loadSucceeded
+} = require('../actions');
+
+function isToday(day) {
+	if (!day) {
+		return false;
+	}
+
+	const today = dateformat(new Date(), 'ddmmyyyy');
+
+	return today === dateformat(day.raw, 'ddmmyyyy');
+}
 
 function * bootstrap() {
 	yield put(load());
+
+	const days = [...(yield take(loadSucceeded().type)).payload];
+
+	if (!isToday(days[0])) {
+		console.log('should create the file for today');
+	}
 }
 
 module.exports = bootstrap;

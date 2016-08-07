@@ -30,10 +30,10 @@ function * worker() {
 	try {
 		const handler = yield daily();
 		const results = (yield call(days, {handler}))
-			.map(unix => parseInt(unix, 10))
 			.map(unix => ({
-				id: unix,
-				formatted: dateformat(unix * 1000, 'dd. mmmm yyyy')
+				unix,
+				raw: parseInt(unix * 1000, 10),
+				human: dateformat(unix * 1000, 'dd. mmmm yyyy')
 			}));
 
 		yield put(loadSucceeded(results));
