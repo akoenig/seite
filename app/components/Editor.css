@@ -15,16 +15,17 @@ const css = require('../utils/css');
 
 const styles = css(`
 	.editor {
-		height: 100%;
+		height: 300px;
 	}
 
 	.editor__textarea {
 		border: none;
 		color: #9c27b0;
 		height: 100%;
-		font-size: 135%;
+		font-size: 125%;
 		line-height: 1.7em;
 		margin:0;
+		padding: 0;
 		/* Some space for the scrollbar */
 		padding-right: 30px;
 		outline: 0;

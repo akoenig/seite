@@ -31,7 +31,7 @@ class Workspace extends Component {
 	}
 
 	renderFragments() {
-		const {fragments = ['asd']} = this.props;
+		const {fragments = ['example']} = this.props;
 
 		if (fragments.length) {
 			return fragments.map(fragment =>

@@ -26,6 +26,7 @@ const styles = css(`
 	}
 
 	.fragment:hover .fragment__footer {
+		margin-top: 1em;
 		opacity: 1;
 	}
 
