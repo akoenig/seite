@@ -15,7 +15,8 @@
 
 const {h} = require('preact');
 
-const {Editor, Header} = require('./components');
+const {Header, PlusButton} = require('./components');
+const {Workspace} = require('./containers');
 
 const styles = require('./App.css');
 
@@ -24,8 +25,13 @@ const App = () =>
 		h('div', {class: styles.app__header.className},
 			h(Header)
 		),
+		h('div', {class: styles.app__interactions.className},
+			h('div', {class: styles.app__interactions__item.className},
+				h(PlusButton)
+			)
+		),
 		h('div', {class: styles.app__workspace.className},
-			h(Editor)
+			h(Workspace)
 		)
 	);
 

@@ -16,6 +16,7 @@ const css = require('./utils/css');
 module.exports = css(`
 	html, body {
 		background: #fff;
+		cursor: default;
 		height: 100%;
 		-webkit-user-select: none;
 	}
@@ -35,6 +36,7 @@ module.exports = css(`
 	.app {
 		display: flex;
 		flex-direction: column;
+		overflow: auto;		
 		height: 100%;
 	}
 
@@ -43,8 +45,20 @@ module.exports = css(`
 		width: 100%;
 	}
 
+	.app__interactions {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+
+	.app__interactions__item {
+		margin: 0 1em;
+	}
+
 	.app__workspace {
 		flex: 1;
+		margin: 0 auto;
 		padding: 2em;
+		width: 70%;
 	}
 `);

@@ -1,0 +1,30 @@
+/**
+ * @seite/desktop
+ *
+ * Copyright, 2016 André König <andre.koenig@gmail.com>
+ * All rights reserved
+ *
+ */
+
+/*
+ * @author André König <andre.koenig@gmail.com>
+ *
+ */
+
+const css = require('../utils/css');
+
+const styles = css(`
+	.plus {
+		color: #9c27b0;
+		font-size: 200%;
+		font-weight: bold;
+		opacity: 0.2;
+		transition: opacity 0.4s ease-in-out;
+	}
+
+	.plus:hover {
+		opacity: 1;
+	}
+`);
+
+module.exports = styles;
