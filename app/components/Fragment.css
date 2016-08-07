@@ -1,0 +1,47 @@
+/**
+ * @seite/desktop
+ *
+ * Copyright, 2016 André König <andre.koenig@gmail.com>
+ * All rights reserved
+ *
+ */
+
+/*
+ * @author André König <andre.koenig@gmail.com>
+ *
+ */
+
+const css = require('../utils/css');
+
+const styles = css(`
+	.fragment {
+
+	}
+
+	.fragment__footer {
+		display: flex;
+		opacity: 0;
+		font-size: 60%;
+		transition: opacity 0.4s ease-in-out;
+	}
+
+	.fragment:hover .fragment__footer {
+		opacity: 1;
+	}
+
+
+	.fragment__footer__left {
+		display: flex;
+		justify-content: flex-start;
+		width: 50%;
+	}
+
+	.fragment__footer__right {
+		color: tomato;
+		display: flex;
+		justify-content: flex-end;
+		width: 50%;
+	}
+`);
+
+module.exports = styles;

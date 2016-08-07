@@ -13,12 +13,12 @@
 
 'use strict';
 
-const Editor = require('./Editor');
+const Fragment = require('./Fragment');
 const Header = require('./Header');
 const Introduction = require('./Introduction');
 const PlusButton = require('./PlusButton');
 
-module.exports.Editor = Editor;
+module.exports.Fragment = Fragment;
 module.exports.Header = Header;
 module.exports.Introduction = Introduction;
 module.exports.PlusButton = PlusButton;

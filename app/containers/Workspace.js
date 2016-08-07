@@ -15,7 +15,7 @@
 
 const {h, Component} = require('preact');
 
-const {Introduction} = require('../components');
+const {Fragment, Introduction} = require('../components');
 
 const styles = require('./Workspace.css');
 
@@ -31,10 +31,12 @@ class Workspace extends Component {
 	}
 
 	renderFragments() {
-		const {fragments = []} = this.props;
+		const {fragments = ['asd']} = this.props;
 
 		if (fragments.length) {
-			return h('div', {}, ';(');
+			return fragments.map(fragment =>
+				h(Fragment, {fragment})
+			);
 		}
 
 		return h(Introduction);
