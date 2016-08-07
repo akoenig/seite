@@ -27,7 +27,7 @@ const Sidebar = ({days, onCaptionClick}) =>
 		h('ul', {class: styles.sidebar__captions.className},
 			days.length ? days.map(day =>
 				h('li', {class: styles.sidebar__captions__entry.className, onClick: onCaptionClick},
-					day.formatted
+					day.human
 				)
 			) : h('li', {class: styles.sidebar__captions__entry.className, onClick: onCaptionClick},
 				':('

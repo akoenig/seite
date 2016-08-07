@@ -33,7 +33,7 @@ describe('The "daily" fetch function', function () {
 	beforeEach(done => {
 		fs.mkdirSync(tmp);
 
-		fs.writeFileSync(path.join(tmp, '20120102.md'), 'foobar');
+		fs.writeFileSync(path.join(tmp, '1455235200.md'), 'foobar');
 
 		done();
 	});
@@ -46,7 +46,7 @@ describe('The "daily" fetch function', function () {
 		const probe = co.wrap(function * () {
 			const handler = yield daily({path: tmp});
 
-			const result = yield fetch({handler, day: '20120102'});
+			const result = yield fetch({handler, day: '1455235200'});
 
 			return result;
 		});

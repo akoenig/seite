@@ -38,9 +38,9 @@ describe('The "daily" put function', function () {
 		const probe = co.wrap(function * () {
 			const handler = yield daily({path: tmp});
 
-			yield put({handler, day: '20120102', contents: 'hello world'});
+			yield put({handler, day: '1455235200', contents: 'hello world'});
 
-			const contents = yield fs.readFile(path.join(handler.path, '20120102.md'), 'utf-8');
+			const contents = yield fs.readFile(path.join(handler.path, '1455235200.md'), 'utf-8');
 
 			return contents;
 		});
