@@ -29,6 +29,9 @@
   "keywords": [],
   "author": "André König <andre.koenig@gmail.com>",
   "license": "SEE LICENSE IN license.md",
+  "engines": {
+    "node" : "^6.0.0"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
