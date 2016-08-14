@@ -14,7 +14,10 @@
 const css = require('../utils/css');
 
 const styles = css(`
-	.workspace {}
+	.workspace {
+		margin: 0 auto;
+		width: 70%;
+	}
 
 	.workspace__add:hover {
 		opacity: 1;

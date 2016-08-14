@@ -50,6 +50,7 @@ class Fragment extends Component {
 	render() {
 		const {hasFocus} = this.state;
 		const {onFocus, onBlur, onChange} = this;
+		const {created} = this.props;
 
 		return (
 			React.createElement('div', {className: styles.fragment.className},
@@ -57,7 +58,7 @@ class Fragment extends Component {
 					React.createElement(Editor, {hasFocus, onFocus, onBlur, onChange})
 				),
 				React.createElement('div', {className: styles.fragment__footer.className},
-					React.createElement('div', {className: styles.fragment__footer__left.className}, '20. Juli 2015'),
+					React.createElement('div', {className: styles.fragment__footer__left.className}, created),
 					React.createElement('div', {className: styles.fragment__footer__right.className}, 'delete')
 				)
 			)
