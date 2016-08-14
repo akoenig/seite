@@ -16,19 +16,21 @@
 const React = require('react');
 const {connect} = require('react-redux');
 
+const {getFragmentIds} = require('../redux/fragments/selectors');
+
 const Fragment = require('./Fragment');
 const Introduction = require('./Introduction');
 
 const styles = require('./Workspace.css');
 
-const mapStateToProps = ({fragments}) => ({
-	fragments
+const mapStateToProps = state => ({
+	fragmentIds: getFragmentIds(state)
 });
 
-const Workspace = ({fragments}) =>
+const Workspace = ({fragmentIds}) =>
 	React.createElement('div', {className: styles.workspace.className},
 		React.createElement('div', {className: styles.workspace__fragments.className},
-			fragments.length ? fragments.map(({id}) =>
+			fragmentIds.length ? fragmentIds.map(id =>
 				React.createElement('div', {key: id, className: styles.workspace__fragments__item},
 					React.createElement(Fragment, {id})
 				)

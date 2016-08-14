@@ -15,13 +15,18 @@
 
 const React = require('react');
 const {Component} = require('react');
+const {connect} = require('react-redux');
+
+const {getFragmentById} = require('../redux/fragments/selectors');
 
 const Editor = require('./Editor');
 
 const styles = require('./Fragment.css');
 
-class Fragment extends Component {
+const mapStateToProps = (state, {id}) =>
+	getFragmentById(state, id);
 
+class Fragment extends Component {
 	constructor() {
 		super();
 
@@ -48,4 +53,4 @@ class Fragment extends Component {
 	}
 }
 
-module.exports = Fragment;
+module.exports = connect(mapStateToProps)(Fragment);

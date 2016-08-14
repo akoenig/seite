@@ -12,6 +12,10 @@
 		<div id="app"></div>
 
 		<script>
+			if (process.env.NODE_ENV !== 'production') {
+				require('electron-react-devtools').inject();
+			}
+
 			require('./app');
 		</script>
 	</body>
