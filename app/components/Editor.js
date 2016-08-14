@@ -14,12 +14,13 @@
 'use strict';
 
 const React = require('react');
+const Textarea = require('react-autosize-textarea');
 
 const styles = require('./Editor.css');
 
 const Editor = () =>
 	React.createElement('div', {className: styles.editor.className},
-		React.createElement('textarea', {className: styles.editor__textarea.className})
+		React.createElement(Textarea, {className: styles.editor__textarea.className, rows: 1})
 	);
 
 module.exports = Editor;

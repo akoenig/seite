@@ -15,24 +15,25 @@ const css = require('../utils/css');
 
 const styles = css(`
 	.editor {
-		height: 300px;
-		margin: 1em;
+		border: 1px solid rgba(0, 0, 0, 0.06);
+		padding: 1em;
 	}
 
 	.editor__textarea {
 		border: none;
 		color: #9c27b0;
+		display: block;
 		height: 100%;
 		font-size: 125%;
+		font-weight: 200;
 		line-height: 1.7em;
-		margin:0;
 		padding: 0;
+		margin: 0;
 		outline: 0;
 		resize: none;
-		width: 100%;
-		font-weight: 200;
 		text-rendering: optimizeLegibility;
 		text-shadow: 0px 0px 0px #000;
+		width: 100%;
 		-webkit-text-fill-color: transparent;
 	}
 `);
