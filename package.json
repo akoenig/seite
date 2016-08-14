@@ -6,6 +6,7 @@
     "lint": "./scripts/lint",
     "start": "./scripts/start",
     "test": "./scripts/test",
+	"package": "./scripts/package",
     "postpublish": "greenkeeper-postpublish"
   },
   "config": {

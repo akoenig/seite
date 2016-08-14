@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+#
+# Performs a build and packages the app with the help of the `electron-packager`
+#
+
+rm -rf ./build && npm i && electron-packager ./ 'seite' --platform=darwin --icon=./icon.icns --arch=x64 --prune --asar --out ./build
