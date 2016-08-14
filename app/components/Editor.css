@@ -16,6 +16,7 @@ const css = require('../utils/css');
 const styles = css(`
 	.editor {
 		height: 300px;
+		margin: 1em;
 	}
 
 	.editor__textarea {
@@ -26,8 +27,6 @@ const styles = css(`
 		line-height: 1.7em;
 		margin:0;
 		padding: 0;
-		/* Some space for the scrollbar */
-		padding-right: 30px;
 		outline: 0;
 		resize: none;
 		width: 100%;

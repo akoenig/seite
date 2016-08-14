@@ -14,9 +14,9 @@
 const css = require('../utils/css');
 
 const styles = css(`
-	.fragment {
+	.fragment {}
 
-	}
+	.fragment__editor {}
 
 	.fragment__footer {
 		display: flex;

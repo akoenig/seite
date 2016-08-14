@@ -21,7 +21,9 @@ const styles = require('./Fragment.css');
 
 const Fragment = () =>
 	h('div', {class: styles.fragment.className},
-		h(Editor),
+		h('div', {class: styles.fragment__editor.className},
+			h(Editor)
+		),
 		h('div', {class: styles.fragment__footer.className},
 			h('div', {class: styles.fragment__footer__left.className}, '20. Juli 2015'),
 			h('div', {class: styles.fragment__footer__right.className}, 'delete')
