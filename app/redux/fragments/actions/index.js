@@ -17,13 +17,20 @@ const {createAction} = require('redux-actions');
 
 const {
 	ADD_REQUESTED,
-	ADD_SUCCEEDED
+	ADD_SUCCEEDED,
+	EDIT_REQUESTED,
+	EDIT_SUCCEEDED
 } = require('../constants/actions');
 
 const add = createAction(ADD_REQUESTED);
 const addSucceeded = createAction(ADD_SUCCEEDED);
 
+const edit = createAction(EDIT_REQUESTED);
+const editSucceeded = createAction(EDIT_SUCCEEDED);
+
 module.exports = {
 	add,
-	addSucceeded
+	addSucceeded,
+	edit,
+	editSucceeded
 };

@@ -15,3 +15,6 @@
 
 module.exports.ADD_REQUESTED = '@@akoenig/seite/fragments/add/requested';
 module.exports.ADD_SUCCEEDED = '@@akoenig/seite/fragments/add/succeeded';
+
+module.exports.EDIT_REQUESTED = '@@akoenig/seite/fragments/edit/requested';
+module.exports.EDIT_SUCCEEDED = '@@akoenig/seite/fragments/edit/succeeded';
