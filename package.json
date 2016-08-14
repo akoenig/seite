@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "WIP (stay tuned).",
   "scripts": {
-    "lint": "scripty",
-    "start": "scripty",
-    "build": "scripty",
-    "test": "scripty",
+    "lint": "./scripts/lint",
+    "start": "./scripts/start",
+    "test": "./scripts/test",
     "postpublish": "greenkeeper-postpublish"
   },
   "config": {
@@ -38,7 +37,6 @@
     "greenkeeper-postpublish": "^1.0.0",
     "mocha": "^3.0.1",
     "rimraf": "^2.5.4",
-    "scripty": "^1.6.0",
     "xo": "^0.16.0"
   },
   "dependencies": {
