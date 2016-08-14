@@ -13,10 +13,5 @@
 
 'use strict';
 
-const bootstrap = require('./bootstrap');
-const load = require('./load');
-
-module.exports = [
-	load,
-	bootstrap
-];
+module.exports.ADD_REQUESTED = '@@akoenig/seite/fragments/add/requested';
+module.exports.ADD_SUCCEEDED = '@@akoenig/seite/fragments/add/succeeded';

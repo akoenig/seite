@@ -15,16 +15,15 @@
 
 const {handleActions} = require('redux-actions');
 
-const {
-	LOAD_SUCCEEDED
-} = require('../constants/actions');
+const {addSucceeded} = require('../actions');
 
-const createState = () => ({
-	entries: []
-});
+const createState = () => [];
 
 const handlers = {
-	[LOAD_SUCCEEDED]: (state, {payload: days}) => Object.assign({}, state, {entries: days})
+	[addSucceeded().type]: (state, {payload: fragment}) => [
+		fragment,
+		...state
+	]
 };
 
 module.exports = handleActions(handlers, createState());

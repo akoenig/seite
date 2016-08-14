@@ -46,6 +46,7 @@
     "dateformat": "^1.0.12",
     "env-paths": "^0.3.0",
     "insert-css": "^1.0.0",
+    "node-uuid": "^1.4.7",
     "react": "^15.3.0",
     "react-autosize-textarea": "^0.3.2",
     "react-dom": "^15.3.0",

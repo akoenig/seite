@@ -13,14 +13,14 @@
 
 'use strict';
 
-const {reducers: DaysReducers, sagas: DaysSagas} = require('./days');
+const {reducers: FragmentsReducers, sagas: FragmentsSagas} = require('./fragments');
 
 const reducers = {
-	days: DaysReducers
+	fragments: FragmentsReducers
 };
 
 const sagas = [
-	...DaysSagas
+	...FragmentsSagas
 ];
 
 module.exports.reducers = reducers;

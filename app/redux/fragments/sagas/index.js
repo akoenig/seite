@@ -13,13 +13,8 @@
 
 'use strict';
 
-import {handleActions} from 'redux-actions';
+const add = require('./add');
 
-const createState = () => ({
-	days: {},
-	entries: {}
-});
-
-const handlers = {};
-
-export default handleActions(handlers, createState());
+module.exports = [
+	add
+];

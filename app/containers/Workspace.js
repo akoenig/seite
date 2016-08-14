@@ -15,10 +15,15 @@
 
 const React = require('react');
 const {Component} = require('react');
+const {connect} = require('react-redux');
 
 const {Fragment, Introduction} = require('../components');
 
 const styles = require('./Workspace.css');
+
+const mapStateToProps = ({fragments}) => ({
+	fragments
+});
 
 class Workspace extends Component {
 	render() {
@@ -32,11 +37,13 @@ class Workspace extends Component {
 	}
 
 	renderFragments() {
-		const {fragments = ['example']} = this.props;
+		const {fragments} = this.props;
 
 		if (fragments.length) {
-			return fragments.map((fragment, index) =>
-				React.createElement(Fragment, {key: index, fragment})
+			return fragments.map(fragment =>
+				React.createElement('div', {key: fragment.created, className: styles.workspace__fragments__item},
+					React.createElement(Fragment, {key: fragment.created, fragment})
+				)
 			);
 		}
 
@@ -44,4 +51,4 @@ class Workspace extends Component {
 	}
 }
 
-module.exports = Workspace;
+module.exports = connect(mapStateToProps)(Workspace);

@@ -20,7 +20,9 @@ const styles = css(`
 		opacity: 1;
 	}
 
-	.workspace__fragments {
+	.workspace__fragments {}
+
+	.workspace__fragments__item {
 		margin: 2em 0;
 	}
 `);

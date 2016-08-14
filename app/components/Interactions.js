@@ -14,15 +14,37 @@
 'use strict';
 
 const React = require('react');
+const {Component} = require('react');
+const {bindActionCreators} = require('redux');
+const {connect} = require('react-redux');
 const MdAdd = require('react-icons/lib/md/add');
+
+const {add} = require('../redux/fragments/actions');
 
 const styles = require('./Interactions.css');
 
-const Interactions = () =>
-	React.createElement('ul', {className: styles.interactions.className},
-		React.createElement('li', {className: styles.interactions__item.className},
-			React.createElement(MdAdd)
-		)
-	);
+const mapDispatchToProps = dispatch => ({
+	actions: bindActionCreators({add}, dispatch)
+});
 
-module.exports = Interactions;
+class Interactions extends Component {
+	constructor() {
+		super();
+
+		this.add = () => this.props.actions.add();
+	}
+
+	render() {
+		const {add} = this;
+
+		return (
+			React.createElement('ul', {className: styles.interactions.className},
+				React.createElement('li', {className: styles.interactions__item.className},
+					React.createElement(MdAdd, {onClick: add})
+				)
+			)
+		);
+	}
+}
+
+module.exports = connect(undefined, mapDispatchToProps)(Interactions);
