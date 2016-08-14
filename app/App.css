@@ -51,10 +51,6 @@ module.exports = css(`
 		width: 100%;
 	}
 
-	.app__interactions__item {
-		margin: 0 1em;
-	}
-
 	.app__workspace {
 		flex: 1;
 		margin: 0 auto;

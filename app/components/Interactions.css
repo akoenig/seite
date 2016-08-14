@@ -1,0 +1,41 @@
+/**
+ * @seite/desktop
+ *
+ * Copyright, 2016 André König <andre.koenig@gmail.com>
+ * All rights reserved
+ *
+ */
+
+/*
+ * @author André König <andre.koenig@gmail.com>
+ *
+ */
+
+const css = require('../utils/css');
+
+const styles = css(`
+	.interactions {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.interactions__item {
+		display: inline-block;
+		margin: 0.5em 0.5em;
+		padding: 0;
+	}
+
+	.interactions__item svg {
+		color: rgba(156, 39, 176, 0.2);
+		height: 1.5em;
+    	width: 1.5em;
+		transition: color 0.2s ease-in-out;
+	}
+
+	.interactions__item:hover svg {
+		color: rgba(156, 39, 176, 1);
+	}
+`);
+
+module.exports = styles;
