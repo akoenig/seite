@@ -10,10 +10,6 @@ build:
         name: npm run lint
         code: npm run lint
 
-    - script:
-        name: npm test
-        code: npm test
-
   after-steps:
     - install-packages:
       packages: ruby
