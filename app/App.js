@@ -15,8 +15,7 @@
 
 const React = require('react');
 
-const {Header, Interactions} = require('./components');
-const {Workspace} = require('./containers');
+const {Header, Interactions, Workspace} = require('./components');
 
 const styles = require('./App.css');
 

@@ -13,12 +13,10 @@
 
 'use strict';
 
-const Fragment = require('./Fragment');
 const Header = require('./Header');
 const Interactions = require('./Interactions');
-const Introduction = require('./Introduction');
+const Workspace = require('./Workspace');
 
-module.exports.Fragment = Fragment;
 module.exports.Header = Header;
 module.exports.Interactions = Interactions;
-module.exports.Introduction = Introduction;
+module.exports.Workspace = Workspace;
