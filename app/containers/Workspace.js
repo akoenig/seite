@@ -13,7 +13,8 @@
 
 'use strict';
 
-const {h, Component} = require('preact');
+const React = require('react');
+const {Component} = require('react');
 
 const {Fragment, Introduction} = require('../components');
 
@@ -22,8 +23,8 @@ const styles = require('./Workspace.css');
 class Workspace extends Component {
 	render() {
 		return (
-			h('div', {class: styles.workspace.className},
-				h('div', {class: styles.workspace__fragments.className},
+			React.createElement('div', {className: styles.workspace.className},
+				React.createElement('div', {className: styles.workspace__fragments.className},
 					this.renderFragments()
 				)
 			)
@@ -34,12 +35,12 @@ class Workspace extends Component {
 		const {fragments = ['example']} = this.props;
 
 		if (fragments.length) {
-			return fragments.map(fragment =>
-				h(Fragment, {fragment})
+			return fragments.map((fragment, index) =>
+				React.createElement(Fragment, {key: index, fragment})
 			);
 		}
 
-		return h(Introduction);
+		return React.createElement(Introduction);
 	}
 }
 

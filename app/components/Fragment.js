@@ -13,20 +13,20 @@
 
 'use strict';
 
-const {h} = require('preact');
+const React = require('react');
 
 const Editor = require('./Editor');
 
 const styles = require('./Fragment.css');
 
 const Fragment = () =>
-	h('div', {class: styles.fragment.className},
-		h('div', {class: styles.fragment__editor.className},
-			h(Editor)
+	React.createElement('div', {className: styles.fragment.className},
+		React.createElement('div', {className: styles.fragment__editor.className},
+			React.createElement(Editor)
 		),
-		h('div', {class: styles.fragment__footer.className},
-			h('div', {class: styles.fragment__footer__left.className}, '20. Juli 2015'),
-			h('div', {class: styles.fragment__footer__right.className}, 'delete')
+		React.createElement('div', {className: styles.fragment__footer.className},
+			React.createElement('div', {className: styles.fragment__footer__left.className}, '20. Juli 2015'),
+			React.createElement('div', {className: styles.fragment__footer__right.className}, 'delete')
 		)
 	);
 

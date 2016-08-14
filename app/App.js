@@ -13,7 +13,7 @@
 
 'use strict';
 
-const {h} = require('preact');
+const React = require('react');
 
 const {Header, PlusButton} = require('./components');
 const {Workspace} = require('./containers');
@@ -21,17 +21,17 @@ const {Workspace} = require('./containers');
 const styles = require('./App.css');
 
 const App = () =>
-	h('div', {class: styles.app.className},
-		h('div', {class: styles.app__header.className},
-			h(Header)
+	React.createElement('div', {className: styles.app.className},
+		React.createElement('div', {className: styles.app__header.className},
+			React.createElement(Header)
 		),
-		h('div', {class: styles.app__interactions.className},
-			h('div', {class: styles.app__interactions__item.className},
-				h(PlusButton)
+		React.createElement('div', {className: styles.app__interactions.className},
+			React.createElement('div', {className: styles.app__interactions__item.className},
+				React.createElement(PlusButton)
 			)
 		),
-		h('div', {class: styles.app__workspace.className},
-			h(Workspace)
+		React.createElement('div', {className: styles.app__workspace.className},
+			React.createElement(Workspace)
 		)
 	);
 

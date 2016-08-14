@@ -13,14 +13,14 @@
 
 'use strict';
 
-const {h} = require('preact');
+const React = require('react');
 const Logo = require('./Logo');
 
 const styles = require('./Header.css');
 
 const Header = () =>
-	h('div', {class: styles.header.className},
-		h(Logo)
+	React.createElement('div', {className: styles.header.className},
+		React.createElement(Logo)
 	);
 
 module.exports = Header;

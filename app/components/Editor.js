@@ -13,13 +13,13 @@
 
 'use strict';
 
-const {h} = require('preact');
+const React = require('react');
 
 const styles = require('./Editor.css');
 
 const Editor = () =>
-	h('div', {class: styles.editor.className},
-		h('textarea', {class: styles.editor__textarea.className})
+	React.createElement('div', {className: styles.editor.className},
+		React.createElement('textarea', {className: styles.editor__textarea.className})
 	);
 
 module.exports = Editor;

@@ -13,8 +13,9 @@
 
 'use strict';
 
-const {h, render} = require('preact');
-const {Provider} = require('preact-redux');
+const React = require('react');
+const {render} = require('react-dom');
+const {Provider} = require('react-redux');
 
 const App = require('./App');
 
@@ -24,7 +25,7 @@ const createStore = require('./store');
 const store = createStore({reducers, sagas});
 
 render(
-	h(Provider, {store},
-		h(App)
+	React.createElement(Provider, {store},
+		React.createElement(App)
 	)
 , document.getElementById('app'));

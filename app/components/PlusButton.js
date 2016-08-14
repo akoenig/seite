@@ -13,12 +13,12 @@
 
 'use strict';
 
-const {h} = require('preact');
+const React = require('react');
 
 const styles = require('./PlusButton.css');
 
 const PlusButton = () =>
-	h('div', {class: styles.plus.className},
+	React.createElement('div', {className: styles.plus.className},
 		'+'
 	);
 

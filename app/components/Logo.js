@@ -13,14 +13,14 @@
 
 'use strict';
 
-const {h} = require('preact');
+const React = require('react');
 
 const styles = require('./Logo.css');
 
 const Logo = () =>
-	h('div', {class: styles.logo.className},
-		h('span', {class: styles.logo__title.className}, 'seite',
-			h('span', {class: styles.logo__title__caret.className}, 'I')
+	React.createElement('div', {className: styles.logo.className},
+		React.createElement('span', {className: styles.logo__title.className}, 'seite',
+			React.createElement('span', {className: styles.logo__title__caret.className}, 'I')
 		)
 	);
 
