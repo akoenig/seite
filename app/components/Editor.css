@@ -15,6 +15,11 @@ const css = require('../utils/css');
 
 const styles = css(`
 	.editor {
+		border: 1px solid #fff;
+		padding: 1em;
+	}
+
+	.editor--focus {
 		border: 1px solid rgba(0, 0, 0, 0.06);
 		padding: 1em;
 	}

@@ -18,9 +18,19 @@ const Textarea = require('react-autosize-textarea');
 
 const styles = require('./Editor.css');
 
-const Editor = () =>
-	React.createElement('div', {className: styles.editor.className},
-		React.createElement(Textarea, {className: styles.editor__textarea.className, rows: 1})
+const Editor = ({hasFocus, onBlur, onFocus}) =>
+	React.createElement('div', {className: `${styles.editor.className} ${hasFocus ? styles['editor--focus'].className : ''}`},
+		React.createElement(Textarea, {
+			className: styles.editor__textarea, rows: 1,
+			onBlur,
+			onFocus
+		})
 	);
+
+Editor.propTypes = {
+	hasFocus: React.PropTypes.bool.isRequired,
+	onBlur: React.PropTypes.func.isRequired,
+	onFocus: React.PropTypes.func.isRequired
+};
 
 module.exports = Editor;
