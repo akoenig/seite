@@ -18,7 +18,7 @@ const {Component} = require('react');
 const {bindActionCreators} = require('redux');
 const {connect} = require('react-redux');
 
-const {edit} = require('../redux/fragments/actions');
+const {edit, remove} = require('../redux/fragments/actions');
 const {getFragmentById} = require('../redux/fragments/selectors');
 
 const Editor = require('./Editor');
@@ -29,7 +29,7 @@ const mapStateToProps = (state, {id}) =>
 	getFragmentById(state, id);
 
 const mapDispatchToProps = dispatch => ({
-	actions: bindActionCreators({edit}, dispatch)
+	actions: bindActionCreators({edit, remove}, dispatch)
 });
 
 class Fragment extends Component {
@@ -45,11 +45,17 @@ class Fragment extends Component {
 
 			edit({id, content});
 		};
+
+		this.onRemove = () => {
+			const {id, actions: {remove}} = this.props;
+
+			remove({id});
+		};
 	}
 
 	render() {
 		const {hasFocus} = this.state;
-		const {onFocus, onBlur, onChange} = this;
+		const {onFocus, onBlur, onChange, onRemove} = this;
 		const {created} = this.props;
 
 		return (
@@ -59,7 +65,10 @@ class Fragment extends Component {
 				),
 				React.createElement('div', {className: styles.fragment__footer.className},
 					React.createElement('div', {className: styles.fragment__footer__left.className}, created),
-					React.createElement('div', {className: styles.fragment__footer__right.className}, 'delete')
+					React.createElement('div', {
+						className: styles.fragment__footer__right.className,
+						onClick: onRemove
+					}, 'delete')
 				)
 			)
 		);

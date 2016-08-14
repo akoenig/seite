@@ -18,3 +18,5 @@ module.exports.ADD_SUCCEEDED = '@@akoenig/seite/fragments/add/succeeded';
 
 module.exports.EDIT_REQUESTED = '@@akoenig/seite/fragments/edit/requested';
 module.exports.EDIT_SUCCEEDED = '@@akoenig/seite/fragments/edit/succeeded';
+
+module.exports.REMOVE = '@@akoenig/seite/fragments/remove';

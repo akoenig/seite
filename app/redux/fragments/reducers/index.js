@@ -15,7 +15,7 @@
 
 const {handleActions} = require('redux-actions');
 
-const {addSucceeded, editSucceeded} = require('../actions');
+const {addSucceeded, editSucceeded, remove} = require('../actions');
 
 const createState = () => [];
 
@@ -29,7 +29,9 @@ const handlers = {
 			fragment.id === id ?
 				Object.assign({}, fragment, {content, modified}) :
 				fragment
-		)
+		),
+	[remove().type]: (state, {payload: {id}}) =>
+		state.filter(fragment => fragment.id !== id)
 };
 
 module.exports = handleActions(handlers, createState());

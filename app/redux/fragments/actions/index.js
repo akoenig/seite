@@ -19,7 +19,8 @@ const {
 	ADD_REQUESTED,
 	ADD_SUCCEEDED,
 	EDIT_REQUESTED,
-	EDIT_SUCCEEDED
+	EDIT_SUCCEEDED,
+	REMOVE
 } = require('../constants/actions');
 
 const add = createAction(ADD_REQUESTED);
@@ -27,10 +28,12 @@ const addSucceeded = createAction(ADD_SUCCEEDED);
 
 const edit = createAction(EDIT_REQUESTED);
 const editSucceeded = createAction(EDIT_SUCCEEDED);
+const remove = createAction(REMOVE);
 
 module.exports = {
 	add,
 	addSucceeded,
 	edit,
-	editSucceeded
+	editSucceeded,
+	remove
 };
