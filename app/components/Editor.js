@@ -18,13 +18,14 @@ const Textarea = require('react-autosize-textarea');
 
 const styles = require('./Editor.css');
 
-const Editor = ({hasFocus, onBlur, onFocus, onChange}) =>
+const Editor = ({hasFocus, onBlur, onFocus, onChange, value}) =>
 	React.createElement('div', {className: `${styles.editor.className} ${hasFocus ? styles['editor--focus'].className : ''}`},
 		React.createElement(Textarea, {
 			className: styles.editor__textarea, rows: 1,
 			onBlur,
 			onFocus,
-			onChange
+			onChange,
+			value
 		})
 	);
 

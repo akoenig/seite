@@ -17,6 +17,8 @@ const React = require('react');
 const {Component} = require('react');
 const {bindActionCreators} = require('redux');
 const {connect} = require('react-redux');
+const MdDelete = require('react-icons/lib/md/delete');
+const dateformat = require('dateformat');
 
 const {edit, remove} = require('../redux/fragments/actions');
 const {getFragmentById} = require('../redux/fragments/selectors');
@@ -53,22 +55,38 @@ class Fragment extends Component {
 		};
 	}
 
+	renderTimestamps() {
+		const {created, modified} = this.props;
+
+		let serialization = `Created: ${dateformat(created, 'dd. mmmm yyyy, HH:MM:ss')}`;
+
+		if (modified) {
+			serialization += ` / Modified: ${dateformat(modified, 'dd. mmmm yyyy, HH:MM:ss')}`;
+		}
+
+		return serialization;
+	}
+
 	render() {
 		const {hasFocus} = this.state;
 		const {onFocus, onBlur, onChange, onRemove} = this;
-		const {created} = this.props;
+		const {content} = this.props;
 
 		return (
 			React.createElement('div', {className: styles.fragment.className},
 				React.createElement('div', {className: styles.fragment__editor.className},
-					React.createElement(Editor, {hasFocus, onFocus, onBlur, onChange})
+					React.createElement(Editor, {hasFocus, onFocus, onBlur, onChange, value: content})
 				),
 				React.createElement('div', {className: styles.fragment__footer.className},
-					React.createElement('div', {className: styles.fragment__footer__left.className}, created),
+					React.createElement('div', {className: styles.fragment__footer__left.className},
+						this.renderTimestamps()
+					),
 					React.createElement('div', {
 						className: styles.fragment__footer__right.className,
 						onClick: onRemove
-					}, 'delete')
+					},
+						React.createElement(MdDelete)
+					)
 				)
 			)
 		);

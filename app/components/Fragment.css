@@ -20,7 +20,6 @@ const styles = css(`
 
 	.fragment__footer {
 		display: flex;
-		font-size: 60%;
 		opacity: 0;
 		padding-top: 0.5em;
 		transition: opacity 0.4s ease-in-out;
@@ -30,15 +29,16 @@ const styles = css(`
 		opacity: 1;
 	}
 
-
 	.fragment__footer__left {
 		display: flex;
+		font-size: 60%;
 		justify-content: flex-start;
 		width: 50%;
 	}
 
 	.fragment__footer__right {
 		color: tomato;
+		font-size: 100%;		
 		display: flex;
 		justify-content: flex-end;
 		width: 50%;

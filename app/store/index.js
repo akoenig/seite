@@ -16,14 +16,17 @@
 const {createStore: _createStore, combineReducers, applyMiddleware, compose} = require('redux');
 const createSagaMiddleware = require('redux-saga').default;
 
+const {rehydrate, persister} = require('./persister');
+
 const createStore = options => {
-	const initialState = {};
+	const initialState = rehydrate();
 
 	//
 	// Define middlewares
 	//
 	const middlewares = {
-		saga: createSagaMiddleware()
+		saga: createSagaMiddleware(),
+		persister: persister()
 	};
 
 	//
@@ -38,7 +41,8 @@ const createStore = options => {
 		initialState,
 		compose(
 			applyMiddleware(
-				middlewares.saga
+				middlewares.saga,
+				middlewares.persister
 			),
 			...enhancers
 		)
