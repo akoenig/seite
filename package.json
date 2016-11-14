@@ -47,7 +47,7 @@
   "dependencies": {
     "csjs": "^1.0.6",
     "dateformat": "^1.0.12",
-    "insert-css": "^1.0.0",
+    "insert-css": "^2.0.0",
     "node-uuid": "^1.4.7",
     "react": "^15.3.0",
     "react-autosize-textarea": "^0.3.2",
