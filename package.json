@@ -50,7 +50,7 @@
     "insert-css": "^1.0.0",
     "node-uuid": "^1.4.7",
     "react": "^15.3.0",
-    "react-autosize-textarea": "^0.3.2",
+    "react-autosize-textarea": "^0.4.1",
     "react-dom": "^15.3.0",
     "react-icons": "^2.2.1",
     "react-redux": "^4.4.5",
